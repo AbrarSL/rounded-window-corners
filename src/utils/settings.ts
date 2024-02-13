@@ -26,6 +26,7 @@ export type SchemasKeys =
   | 'black-list'
   | 'skip-libadwaita-app'
   | 'skip-libhandy-app'
+  | 'skip-gtk4-app'
   | 'global-rounded-corner-settings'
   | 'custom-rounded-corner-settings'
   | 'focused-shadow'
@@ -46,6 +47,7 @@ export class Settings {
   black_list!: string[]
   skip_libadwaita_app!: boolean
   skip_libhandy_app!: boolean
+  skip_gtk4_app!: boolean
   global_rounded_corner_settings!: RoundedCornersCfg
   custom_rounded_corner_settings!: CustomRoundedCornersCfg
   focused_shadow!: BoxShadow

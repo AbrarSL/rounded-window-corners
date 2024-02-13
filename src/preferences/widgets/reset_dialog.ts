@@ -59,6 +59,7 @@ export const ResetDialog = GObject.registerClass (
       this._reset_keys = {
         'skip-libadwaita-app': new Cfg (_ ('Skip LibAdwaita Applications')),
         'skip-libhandy-app': new Cfg (_ ('Skip LibHandy Applications')),
+        'skip-gtk4-app': new Cfg (_ ('Skip GTK4 Applications')),
         'focused-shadow': new Cfg (_ ('Focus Window Shadow Style')),
         'unfocused-shadow': new Cfg (_ ('Unfocus Window Shadow Style')),
         'border-width': new Cfg (_ ('Border Width')),

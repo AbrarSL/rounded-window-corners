@@ -85,6 +85,33 @@
               </object>
             </child>
           </object>
+          </child>
+          <child>
+          <object class="GtkListBoxRow">
+            <child>
+              <object class="GtkBox">
+                <child>
+                  <object class="GtkBox">
+                    <property name="valign">center</property>
+                    <property name="hexpand">true</property>
+                    <property name="orientation">vertical</property>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="halign">start</property>
+                        <property name="label" translatable="yes">Skip GTK4 Applications</property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkSwitch" id="skip_gtk4_app_switch">
+                    <property name="visible">true</property>
+                    <property name="valign">center</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
         </child>
         <child>
           <object class="GtkListBoxRow" id="edit_shadow_row">
@@ -107,7 +134,7 @@
                         <property name="label" translatable="yes">Customize the shadow of the rounded corner window</property>
                         <style>
                           <class name="caption"/>
-                        </style>  
+                        </style>
                       </object>
                     </child>
                   </object>
@@ -254,7 +281,7 @@
                         <property name="label" translatable="yes">Tweak clip paddings for Kitty Terminal</property>
                         <style>
                           <class name="caption"/>
-                        </style>  
+                        </style>
                       </object>
                     </child>
                   </object>
@@ -336,7 +363,7 @@
                         <property name="label" translatable="yes">Run &lt;i&gt;journalctl -o cat -f /usr/bin/gnome-shell&lt;/i&gt; in terminal to see the log</property>
                         <style>
                           <class name="caption"/>
-                        </style>  
+                        </style>
                       </object>
                     </child>
                   </object>

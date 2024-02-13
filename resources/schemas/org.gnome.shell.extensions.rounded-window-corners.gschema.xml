@@ -28,6 +28,11 @@
       <default>false</default>
     </key>
 
+    <key name="skip-gtk4-app" type="b">
+      <summary>Skip GTK4 applications</summary>
+      <default>false</default>
+    </key>
+
     <key name="border-width" type="i">
       <summary>Border width for rounded corners window</summary>
       <range min="-40" max="40"/>

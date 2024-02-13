@@ -29,6 +29,7 @@ export const General = GObject.registerClass (
       'enable_log_switch',
       'skip_libadwaita_app_switch',
       'skip_libhandy_app_switch',
+      'skip_gtk4_app_switch',
       'tweak_kitty_switch',
       'preferences_entry_switch',
       'border_width_ajustment',
@@ -44,6 +45,7 @@ export const General = GObject.registerClass (
     private _enable_log_switch!: Gtk.Switch
     private _skip_libhandy_app_switch!: Gtk.Switch
     private _skip_libadwaita_app_switch!: Gtk.Switch
+    private _skip_gtk4_app_switch!: Gtk.Switch
     private _tweak_kitty_switch!: Gtk.Switch
     private _preferences_entry_switch!: Gtk.Switch
     private _border_width_ajustment!: Gtk.Adjustment
@@ -97,6 +99,12 @@ export const General = GObject.registerClass (
       settings ().bind (
         'skip-libhandy-app',
         this._skip_libhandy_app_switch,
+        'active',
+        Gio.SettingsBindFlags.DEFAULT
+      )
+      settings ().bind (
+        'skip-gtk4-app',
+        this._skip_gtk4_app_switch,
         'active',
         Gio.SettingsBindFlags.DEFAULT
       )
