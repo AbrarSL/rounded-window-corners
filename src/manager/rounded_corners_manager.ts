@@ -232,6 +232,7 @@ export class RoundedCornersManager implements EffectManager {
     switch (key) {
     case 'skip-libadwaita-app':
     case 'skip-libhandy-app':
+    case 'skip-gtk4-app':
     case 'black-list':
       this._update_all_window_effect_state ()
       break
@@ -298,7 +299,7 @@ export class RoundedCornersManager implements EffectManager {
       return false
     }
 
-    // Skip libhandy / libadwaita applications according the settings.
+    // Skip libhandy / libadwaita / gtk4 applications according the settings.
     const { AppType, getAppType } = UI
     const app_type = win.__app_type ?? getAppType (win)
     win.__app_type = app_type // cache result
@@ -308,6 +309,9 @@ export class RoundedCornersManager implements EffectManager {
       return false
     }
     if (settings ().skip_libhandy_app && app_type === AppType.LibHandy) {
+      return false
+    }
+    if (settings ().skip_gtk4_app && app_type === AppType.GTK4) {
       return false
     }
 

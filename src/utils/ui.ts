@@ -37,13 +37,14 @@ export const computeWindowContentsOffset = (
 export enum AppType {
   LibHandy,
   LibAdwaita,
+  GTK4,
   Other,
 }
 
 /**
  * Query application type for a Meta.Window, used to skip add rounded
  * corners effect to some window.
- * @returns Application Type: LibHandy | LibAdwaita | Other
+ * @returns Application Type: LibHandy | LibAdwaita | GTK4 | Other
  */
 export const getAppType = (meta_window: Meta.Window) => {
   try {
@@ -53,6 +54,8 @@ export const getAppType = (meta_window: Meta.Window) => {
       return AppType.LibHandy
     } else if (contents.match (/libadwaita-1.so/)) {
       return AppType.LibAdwaita
+    } else if (contents.match (/gtk-4.so/)) {
+      return AppType.GTK4
     } else {
       return AppType.Other
     }
